@@ -219,8 +219,9 @@
     .testi__row{grid-template-columns:1fr;gap:28px;text-align:center}
     .stat small{max-width:20em;margin-left:auto;margin-right:auto}
     .split{grid-template-columns:1fr}
-    .split .mid{padding:12px;font-size:22px}
-    .split .old{order:1}.split .mid{order:2;transform:rotate(90deg) scale(1);height:52px}
+    .split .old{order:1}
+    .split .mid{order:2;padding:14px;font-size:22px;transform:none;height:auto}
+    .split .mid-arw{display:inline-block;transform:rotate(90deg)}
     .split .new{order:3}
     .sticky{display:block}
   }
@@ -389,7 +390,7 @@
           <li>迷いも恐怖も、ひとりで抱える</li>
         </ul>
       </div>
-      <div class="mid en">&rarr;</div>
+      <div class="mid en"><span class="mid-arw">&rarr;</span></div>
       <div class="col new">
         <h3>これからの稼ぎ方</h3>
         <ul>
