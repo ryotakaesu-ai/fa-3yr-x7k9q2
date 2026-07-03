@@ -187,7 +187,26 @@
   .media__catch{font-family:"Shippori Mincho",serif;font-weight:800;
     font-size:clamp(20px,3.2vw,32px);line-height:1.5;margin:40px 0 26px}
   .media__catch b{color:var(--magenta)}
-  .cta-btn.dark{background:var(--navy);color:#fff;box-shadow:0 16px 40px rgba(11,26,59,.28)}
+  /* flashy CTA */
+  .cta-flash{position:relative;display:inline-flex;align-items:center;gap:14px;
+    background:linear-gradient(100deg,#FF2E8B 0%,#EC1E79 45%,#FF6A00 120%);
+    color:#fff;font-weight:900;font-size:clamp(18px,2.6vw,23px);letter-spacing:.03em;
+    text-decoration:none;padding:24px 56px 24px 30px;border-radius:100px;
+    box-shadow:0 14px 34px rgba(236,30,121,.5),0 0 0 rgba(236,30,121,.55);
+    animation:ctaPulse 1.8s ease-out infinite;transition:transform .25s;overflow:hidden}
+  .cta-flash::after{content:"";position:absolute;top:0;left:-60%;width:45%;height:100%;
+    background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);
+    transform:skewX(-20deg);animation:ctaShine 2.6s ease-in-out infinite}
+  .cta-flash:hover{transform:translateY(-3px) scale(1.03)}
+  .cta-flash .free{background:var(--yellow);color:var(--navy);font-size:13px;font-weight:900;
+    padding:5px 13px;border-radius:100px;box-shadow:0 2px 0 rgba(0,0,0,.12)}
+  .cta-flash .arw{font-family:"Fraunces",serif;font-size:1.15em}
+  @keyframes ctaPulse{
+    0%{box-shadow:0 14px 34px rgba(236,30,121,.5),0 0 0 0 rgba(236,30,121,.55)}
+    70%{box-shadow:0 14px 34px rgba(236,30,121,.5),0 0 0 22px rgba(236,30,121,0)}
+    100%{box-shadow:0 14px 34px rgba(236,30,121,.5),0 0 0 0 rgba(236,30,121,0)}}
+  @keyframes ctaShine{0%{left:-60%}55%,100%{left:130%}}
+  @media(prefers-reduced-motion:reduce){.cta-flash{animation:none}.cta-flash::after{display:none}}
 
   /* proof images */
   .proof{margin:48px 0}
@@ -253,7 +272,7 @@
     <div class="media__ttl">掲載・出演メディア</div>
     <img src="assets/media_logos.png" alt="東海テレビ／STOCK VOICE／株主手帳／PR TIMES／日本経済新聞／Rakuten Infoseek News／exciteニュース／BtoBプラットフォーム業界チャンネル" loading="lazy">
     <p class="media__catch"><b>0円</b>で、プロが株式トレードの個別指導を。</p>
-    <div><a href="#offer" class="cta-btn dark">まずは無料で情報を手に入れる <span class="arw">&rarr;</span></a></div>
+    <div><a href="#offer" class="cta-flash"><span class="free">無料</span>まずは無料で情報を手に入れる <span class="arw">&rarr;</span></a></div>
   </div>
 </section>
 
