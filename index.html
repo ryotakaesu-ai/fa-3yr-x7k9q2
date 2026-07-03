@@ -68,6 +68,16 @@
   /* story (light) */
   .story{background:var(--paper)}
   .story .h2{margin-bottom:34px}
+  .story-portrait{float:right;width:min(300px,38%);margin:6px 0 24px 40px;text-align:center}
+  .story-portrait img{width:100%;border-radius:8px;
+    filter:drop-shadow(0 22px 46px rgba(11,26,59,.20))}
+  .story-portrait figcaption{margin-top:10px;font-family:"Shippori Mincho",serif;font-weight:800;
+    font-size:16px;letter-spacing:.06em}
+  .story-portrait figcaption small{display:block;font-family:"Noto Sans JP";font-weight:600;
+    font-size:11px;letter-spacing:.14em;color:var(--ink-soft);margin-bottom:4px}
+  @media(max-width:640px){
+    .story-portrait{float:none;width:220px;margin:0 auto 28px}
+  }
   .story p{font-size:clamp(15px,1.7vw,17.5px);color:#2B3757;margin-bottom:1.5em;max-width:46em;line-height:2.2}
   .quote{position:relative;margin:52px 0;padding:40px 40px 40px 44px;border-radius:6px;
     background:var(--navy);color:#fff;box-shadow:0 24px 60px rgba(11,26,59,.22)}
@@ -246,13 +256,16 @@
     <span class="lbl">WHY WE BUILT THIS</span>
     <h2 class="h2 mincho"><span class="mk">100万円</span>の個別指導は、<br>ほんの一握りにしか届かなかった。</h2>
     <div style="height:34px"></div>
+    <figure class="story-portrait">
+      <img src="assets/fujii_portrait.jpg" alt="現役トレーダー・投資教育者 藤井百七郎" loading="lazy">
+      <figcaption><small>現役トレーダー／投資教育者</small>藤井 百七郎</figcaption>
+    </figure>
     <p>私はかつて、参加費100万円の個別コンサルを行っていました。一人ひとりと向き合い、そのトレードを直接見て、アドバイスを重ねる。大きな学びが生まれ、トレーダーとして大きく成長した人が何人もいました。もちろん、稼げるようになった人も多くいます。</p>
     <p>けれど、そこには限界がありました。個別に向き合うほど私自身の時間が奪われ、受け入れられる人数はごくわずか。しかも高額なため、<b>資金に余裕のある人しか</b>指導を受けられなかったのです。</p>
     <div class="quote">
       <p>「100万円の個別指導と同じことを、<br>いや、それ<span style="color:var(--cyan)">以上</span>の指導を、<br>格安でできないか。」</p>
     </div>
     <p>その問いから生まれたのが、私の頭脳をそのまま写し取った、<span class="mg">6つのAI</span>です。</p>
-    <p style="text-align:right;margin-top:8px;margin-bottom:0"><span class="mincho" style="font-size:13px;color:var(--ink-soft)">現役トレーダー／投資教育者</span><br><span class="mincho" style="font-size:20px;font-weight:800;letter-spacing:.06em">藤井 百七郎</span></p>
   </div>
 </section>
 
