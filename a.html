@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>3年FIREアカデミー ｜ 藤井百七郎 × モヒチAI</title>
+<link rel="icon" type="image/png" sizes="32x32" href="/fa-3yr-x7k9q2/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/fa-3yr-x7k9q2/favicon-192.png">
+<link rel="apple-touch-icon" href="/fa-3yr-x7k9q2/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;700;800&family=Noto+Sans+JP:wght@400;500;700;800;900&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0B1A3B;
+    --navy-2:#0E2149;
+    --navy-3:#122A5C;
+    --paper:#F4F7FC;
+    --white:#FFFFFF;
+    --ink:#152244;
+    --ink-soft:#4A5878;
+    --magenta:#EC1E79;
+    --magenta-d:#C8156A;
+    --yellow:#FFE500;
+    --cyan:#25C4EA;
+    --gold:#CBA24B;
+    --line:#E2E8F3;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--white);color:var(--ink);
+    font-family:"Noto Sans JP",sans-serif;line-height:1.9;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .mincho{font-family:"Shippori Mincho",serif}
+  .en{font-family:"Fraunces",serif;letter-spacing:.04em}
+  img{display:block;max-width:100%}
+
+  /* marker highlight */
+  .mk{background:linear-gradient(transparent 62%,var(--yellow) 62%);padding:0 .06em;font-weight:800}
+  .mg{color:var(--magenta);font-weight:800}
+  .cy{color:var(--cyan);font-weight:800}
+
+  /* ===== FV ===== */
+  .fv{position:relative;background:var(--navy)}
+  .fv img{width:100%;height:auto}
+  .fv__cta{position:absolute;left:0;right:0;bottom:0;display:none}
+
+  /* sticky cta */
+  .sticky{position:fixed;left:0;right:0;bottom:0;z-index:60;
+    background:linear-gradient(90deg,var(--magenta),#ff3d97);
+    box-shadow:0 -6px 24px rgba(11,26,59,.25);transform:translateY(120%);transition:.4s;padding:12px 16px}
+  .sticky.show{transform:none}
+  .sticky a{display:flex;align-items:center;justify-content:center;gap:10px;
+    max-width:560px;margin:0 auto;color:#fff;font-weight:800;font-size:16px;letter-spacing:.04em;text-decoration:none}
+  .sticky small{background:var(--yellow);color:var(--navy);font-size:12px;font-weight:900;padding:3px 10px;border-radius:100px}
+
+  /* ===== section base ===== */
+  .sec{padding:clamp(72px,10vw,128px) 0}
+  .lbl{display:inline-flex;align-items:center;gap:12px;font-size:12px;font-weight:800;letter-spacing:.26em;
+    color:var(--magenta);margin-bottom:24px}
+  .lbl::before{content:"";width:28px;height:2px;background:var(--magenta)}
+  .lbl.c{color:var(--cyan)}.lbl.c::before{background:var(--cyan)}
+  .h2{font-family:"Shippori Mincho",serif;font-weight:800;
+    font-size:clamp(27px,4.6vw,48px);line-height:1.4;letter-spacing:.01em}
+  .lead{font-size:clamp(15px,1.7vw,18px);color:var(--ink-soft);line-height:2.15;max-width:44em}
+
+  /* story (light) */
+  .story{background:var(--paper)}
+  .story .h2{margin-bottom:34px}
+  .story-portrait{float:right;width:min(300px,38%);margin:6px 0 24px 40px;text-align:center}
+  .story-portrait img{width:100%;border-radius:8px;
+    filter:drop-shadow(0 22px 46px rgba(11,26,59,.20))}
+  .story-portrait figcaption{margin-top:10px;font-family:"Shippori Mincho",serif;font-weight:800;
+    font-size:16px;letter-spacing:.06em}
+  .story-portrait figcaption small{display:block;font-family:"Noto Sans JP";font-weight:600;
+    font-size:11px;letter-spacing:.14em;color:var(--ink-soft);margin-bottom:4px}
+  @media(max-width:640px){
+    .story-portrait{float:none;width:220px;margin:0 auto 28px}
+  }
+  .story p{font-size:clamp(15px,1.7vw,17.5px);color:#2B3757;margin-bottom:1.5em;max-width:46em;line-height:2.2}
+  .quote{clear:both;position:relative;margin:52px 0;padding:40px 40px 40px 44px;border-radius:6px;
+    background:var(--navy);color:#fff;box-shadow:0 24px 60px rgba(11,26,59,.22)}
+  .quote::before{content:"“";position:absolute;top:2px;left:18px;font-family:"Fraunces",serif;
+    font-size:80px;color:var(--magenta);line-height:1}
+  .quote p{font-family:"Shippori Mincho",serif;font-weight:700;color:#fff;
+    font-size:clamp(21px,3.3vw,34px);line-height:1.62;margin:0;max-width:none}
+
+  /* turn (navy) */
+  .turn{background:var(--navy);color:#fff;text-align:center}
+  .turn .h2{color:#fff;margin-bottom:22px}
+  .turn .lead{color:#B9C4DE;margin:0 auto}
+  .turn .en-big{font-family:"Fraunces",serif;font-style:italic;color:var(--cyan);
+    font-size:clamp(13px,1.6vw,16px);letter-spacing:.14em;margin-bottom:18px;display:block;opacity:.9}
+
+  /* ai grid (light) */
+  .ai{background:var(--white)}
+  .ai__head{text-align:center;margin-bottom:56px}
+  .ai__head .lbl{justify-content:center}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .card{border:1px solid var(--line);border-radius:10px;padding:34px 28px;background:#fff;
+    transition:.3s;position:relative;overflow:hidden}
+  .card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px}
+  .card:nth-child(1)::before{background:var(--yellow)}
+  .card:nth-child(2)::before{background:var(--magenta)}
+  .card:nth-child(3)::before{background:var(--cyan)}
+  .card:nth-child(4)::before{background:var(--yellow)}
+  .card:nth-child(5)::before{background:var(--magenta)}
+  .card:nth-child(6)::before{background:var(--cyan)}
+  .card:hover{transform:translateY(-6px);box-shadow:0 20px 44px rgba(11,26,59,.12)}
+  .card__no{font-family:"Fraunces",serif;font-size:34px;font-weight:600;color:var(--navy);opacity:.16;line-height:1}
+  .card__en{font-family:"Fraunces",serif;font-size:12px;letter-spacing:.12em;color:var(--magenta);
+    font-weight:600;margin-top:-18px}
+  .card__name{font-family:"Shippori Mincho",serif;font-weight:800;font-size:19px;margin:12px 0 10px;line-height:1.45}
+  .card__desc{font-size:14px;color:var(--ink-soft);line-height:1.95}
+
+  /* testimony (navy) */
+  .testi{background:linear-gradient(180deg,var(--navy) 0%,var(--navy-2) 100%);color:#fff}
+  .testi__row{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center}
+  .stat{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(64px,12vw,150px);line-height:.9;
+    color:var(--yellow)}
+  .stat small{display:block;font-family:"Noto Sans JP";font-size:14px;font-weight:600;
+    color:#B9C4DE;letter-spacing:.02em;margin-top:20px;line-height:1.7}
+  .testi p{color:#D5DCEC;font-size:clamp(15px,1.7vw,17.5px);line-height:2.2;margin-bottom:1.3em}
+  .testi .voice{font-family:"Shippori Mincho",serif;font-weight:800;color:#fff;
+    font-size:clamp(22px,3.4vw,34px);line-height:1.55;margin:22px 0 14px}
+  .testi .voice em{font-style:normal;color:var(--cyan)}
+
+  /* contrast (light) */
+  .contrast{background:var(--paper);text-align:center}
+  .contrast .h2{margin-bottom:8px}
+  .split{display:grid;grid-template-columns:1fr auto 1fr;margin-top:52px;text-align:left;
+    background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 20px 50px rgba(11,26,59,.10)}
+  .split .col{padding:44px 36px}
+  .split .old{background:#EEF1F7}
+  .split .col h3{font-family:"Shippori Mincho",serif;font-size:14px;letter-spacing:.14em;margin-bottom:24px;
+    padding-bottom:14px;border-bottom:2px solid}
+  .split .old h3{color:var(--ink-soft);border-color:var(--line)}
+  .split .new h3{color:var(--magenta);border-color:var(--magenta)}
+  .split ul{list-style:none}
+  .split li{font-size:14.5px;line-height:1.7;margin-bottom:18px;padding-left:24px;position:relative}
+  .split .old li{color:var(--ink-soft)}
+  .split .new li{color:var(--ink);font-weight:500}
+  .split li::before{position:absolute;left:0;top:0;font-weight:900}
+  .split .old li::before{content:"×";color:#A9B4CC}
+  .split .new li::before{content:"○";color:var(--magenta)}
+  .split .mid{display:flex;align-items:center;justify-content:center;padding:0 8px;
+    background:var(--magenta);color:#fff;font-family:"Fraunces",serif;font-size:26px}
+  .verdict{margin-top:52px;font-family:"Shippori Mincho",serif;font-weight:800;
+    font-size:clamp(23px,4vw,42px);line-height:1.5}
+
+  /* offer */
+  .offer{background:var(--navy);color:#fff;text-align:center;position:relative;overflow:hidden}
+  .offer::before{content:"";position:absolute;top:-30%;right:-10%;width:60%;height:160%;
+    background:radial-gradient(circle,rgba(37,196,234,.18),transparent 60%)}
+  .offer__in{position:relative;z-index:2;max-width:760px;margin:0 auto}
+  .offer__badge{display:inline-block;background:var(--magenta);color:#fff;font-weight:800;font-size:13px;
+    letter-spacing:.1em;padding:8px 22px;border-radius:100px;margin-bottom:28px}
+  .offer__h{font-family:"Shippori Mincho",serif;font-weight:800;font-size:clamp(27px,5vw,46px);
+    line-height:1.5;margin-bottom:26px}
+  .offer__lead{color:#C6D0E6;font-size:clamp(15px,1.7vw,17px);line-height:2.1;max-width:38em;margin:0 auto 40px}
+  .price{display:inline-flex;flex-direction:column;align-items:center;gap:8px;margin-bottom:44px}
+  .price .was{color:#8C98B8;font-size:15px}
+  .price .was s{color:#B9C4DE}
+  .price .now{font-family:"Shippori Mincho",serif;font-weight:800;font-size:clamp(30px,6vw,52px);color:#fff}
+  .price .now b{color:var(--yellow)}
+  .cta-btn{display:inline-flex;align-items:center;gap:14px;background:var(--yellow);color:var(--navy);
+    font-weight:900;font-size:clamp(17px,2.4vw,21px);letter-spacing:.03em;text-decoration:none;
+    padding:22px 60px;border-radius:100px;box-shadow:0 16px 40px rgba(255,229,0,.3);transition:.3s}
+  .cta-btn:hover{transform:translateY(-3px) scale(1.02)}
+  .cta-btn .arw{font-family:"Fraunces",serif}
+  .offer__note{margin-top:26px;font-size:13px;color:#98A4C4;line-height:1.95}
+
+  /* footer */
+  footer{background:var(--navy-2);color:#fff;padding:56px 0 44px;text-align:center}
+  footer .brand{font-family:"Shippori Mincho",serif;font-weight:800;font-size:19px;letter-spacing:.04em}
+  footer .brand .en{display:block;font-size:11px;letter-spacing:.24em;color:var(--gold);margin-top:8px}
+  .disc{font-size:11px;color:#8794B4;max-width:42em;margin:30px auto 0;line-height:1.95}
+
+  /* media band */
+  .media{background:#fff;padding:44px 0;border-bottom:1px solid var(--line)}
+  .media__in{max-width:920px;margin:0 auto;padding:0 24px;text-align:center}
+  .media__ttl{display:inline-flex;align-items:center;gap:12px;font-size:12px;font-weight:800;
+    letter-spacing:.26em;color:var(--ink-soft);margin-bottom:20px}
+  .media__ttl::before,.media__ttl::after{content:"";width:28px;height:2px;background:var(--gold)}
+  .media img{width:100%;border-radius:10px;box-shadow:0 12px 32px rgba(11,26,59,.10)}
+  .media__catch{font-family:"Shippori Mincho",serif;font-weight:800;
+    font-size:clamp(20px,3.2vw,32px);line-height:1.5;margin:40px 0 26px}
+  .media__catch b{color:var(--magenta)}
+  /* flashy CTA */
+  .cta-flash{position:relative;display:inline-flex;align-items:center;gap:14px;
+    background:linear-gradient(100deg,#FF2E8B 0%,#EC1E79 45%,#FF6A00 120%);
+    color:#fff;font-weight:900;font-size:clamp(18px,2.6vw,23px);letter-spacing:.03em;
+    text-decoration:none;padding:24px 56px 24px 30px;border-radius:100px;
+    box-shadow:0 14px 34px rgba(236,30,121,.5),0 0 0 rgba(236,30,121,.55);
+    animation:ctaPulse 1.8s ease-out infinite;transition:transform .25s;overflow:hidden}
+  .cta-flash::after{content:"";position:absolute;top:0;left:-60%;width:45%;height:100%;
+    background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);
+    transform:skewX(-20deg);animation:ctaShine 2.6s ease-in-out infinite}
+  .cta-flash:hover{transform:translateY(-3px) scale(1.03)}
+  .cta-flash .free{background:var(--yellow);color:var(--navy);font-size:13px;font-weight:900;
+    padding:5px 13px;border-radius:100px;box-shadow:0 2px 0 rgba(0,0,0,.12)}
+  .cta-flash .arw{font-family:"Fraunces",serif;font-size:1.15em}
+  @keyframes ctaPulse{
+    0%{box-shadow:0 14px 34px rgba(236,30,121,.5),0 0 0 0 rgba(236,30,121,.55)}
+    70%{box-shadow:0 14px 34px rgba(236,30,121,.5),0 0 0 22px rgba(236,30,121,0)}
+    100%{box-shadow:0 14px 34px rgba(236,30,121,.5),0 0 0 0 rgba(236,30,121,0)}}
+  @keyframes ctaShine{0%{left:-60%}55%,100%{left:130%}}
+  @media(prefers-reduced-motion:reduce){.cta-flash{animation:none}.cta-flash::after{display:none}}
+
+  /* proof images */
+  .proof{margin:48px 0}
+  .proof img{width:100%;border-radius:10px;box-shadow:0 18px 44px rgba(11,26,59,.14)}
+  .proof figcaption{font-size:13px;color:var(--ink-soft);margin-top:14px;text-align:center;letter-spacing:.04em}
+
+  /* voices (教え子対談) */
+  .voices{background:var(--white)}
+  .voices__head{text-align:center;margin-bottom:52px}
+  .voices__head .lbl{justify-content:center}
+  .vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .vcard{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;
+    box-shadow:0 14px 36px rgba(11,26,59,.08);display:flex;flex-direction:column}
+  .vcard img{width:100%}
+  .vcard__body{padding:24px 22px 26px}
+  .vcard__tag{display:inline-block;background:var(--navy);color:var(--yellow);font-size:11.5px;
+    font-weight:800;letter-spacing:.08em;padding:5px 12px;border-radius:100px;margin-bottom:14px}
+  .vcard__quote{font-family:"Shippori Mincho",serif;font-weight:700;font-size:17.5px;line-height:1.75;margin-bottom:12px}
+  .vcard__name{font-size:12.5px;color:var(--ink-soft)}
+  .voices__note{margin-top:28px;font-size:11.5px;color:var(--ink-soft);text-align:center;line-height:1.9}
+
+  /* community band (集合写真) */
+  .comm{background:var(--paper)}
+  .comm__head{text-align:center;margin-bottom:12px}
+  .comm__head .lbl{justify-content:center}
+  @media(max-width:820px){.vgrid{grid-template-columns:1fr}}
+
+  .reveal{opacity:0;transform:translateY(30px);transition:.9s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:820px){
+    .grid{grid-template-columns:1fr 1fr;gap:14px}
+    .testi__row{grid-template-columns:1fr;gap:28px;text-align:center}
+    .stat small{max-width:20em;margin-left:auto;margin-right:auto}
+    .split{grid-template-columns:1fr}
+    .split .old{order:1}
+    .split .mid{order:2;padding:14px;font-size:22px;transform:none;height:auto}
+    .split .mid-arw{display:inline-block;transform:rotate(90deg)}
+    .split .new{order:3}
+    .sticky{display:block}
+  }
+  @media(max-width:520px){
+    .grid{grid-template-columns:1fr}
+    .quote{padding:34px 26px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== FV (image only) ===== -->
+<header class="fv">
+  <a href="#offer" aria-label="無料で受け取る">
+    <picture>
+      <source media="(max-width:760px)" srcset="assets/fv_sp_a.png">
+      <img src="assets/fv_pc_a.png" alt="人数限定のご招待。投資のプロが、あなたの資産を無料診断。診断を受けた方に、あなたにぴったりのAIツールを1つ無料プレゼント。100万円の個別指導と同じ内容を0円で開放。現役トレーダー／投資教育者 藤井百七郎">
+    </picture>
+  </a>
+</header>
+
+<!-- ===== MEDIA ===== -->
+<section class="media">
+  <div class="media__in reveal">
+    <div class="media__ttl">掲載・出演メディア</div>
+    <img src="assets/media_logos.png" alt="東海テレビ／STOCK VOICE／株主手帳／PR TIMES／日本経済新聞／Rakuten Infoseek News／exciteニュース／BtoBプラットフォーム業界チャンネル" loading="lazy">
+    <p class="media__catch"><b>0円</b>で、プロが株式トレードの個別指導を。</p>
+    <div><a href="#offer" class="cta-flash"><span class="free">無料</span>まずは無料で情報を手に入れる <span class="arw">&rarr;</span></a></div>
+  </div>
+</section>
+
+<!-- ===== STORY ===== -->
+<section class="sec story">
+  <div class="wrap reveal">
+    <span class="lbl">WHY WE BUILT THIS</span>
+    <h2 class="h2 mincho"><span class="mk">100万円</span>の個別指導は、<br>ほんの一握りにしか届かなかった。</h2>
+    <div style="height:34px"></div>
+    <figure class="story-portrait">
+      <img src="assets/fujii_portrait.jpg" alt="現役トレーダー・投資教育者 藤井百七郎" loading="lazy">
+      <figcaption><small>現役トレーダー／投資教育者</small>藤井 百七郎</figcaption>
+    </figure>
+    <p>私はかつて、参加費100万円の個別コンサルを行っていました。一人ひとりと向き合い、そのトレードを直接見て、アドバイスを重ねる。大きな学びが生まれ、トレーダーとして大きく成長した人が何人もいました。もちろん、稼げるようになった人も多くいます。</p>
+    <p>けれど、そこには限界がありました。個別に向き合うほど私自身の時間が奪われ、受け入れられる人数はごくわずか。しかも高額なため、<b>資金に余裕のある人しか</b>指導を受けられなかったのです。</p>
+    <div class="quote">
+      <p>「100万円の個別指導と同じことを、<br>いや、それ<span style="color:var(--cyan)">以上</span>の指導を、<br>格安でできないか。」</p>
+    </div>
+    <p>その問いから生まれたのが、私の頭脳をそのまま写し取った、<span class="mg">6つのAI</span>です。</p>
+  </div>
+</section>
+
+<!-- ===== TURN ===== -->
+<section class="sec turn">
+  <div class="wrap reveal">
+    <span class="en-big">Six brains, one master.</span>
+    <h2 class="h2 mincho">藤井の頭脳を、AIのプロと一緒に<br>データベース化しました。</h2>
+    <p class="lead">資金管理の哲学。チャートの読み方。銘柄の選び方。負けそうな時の心の持ち方まで。私の頭の中にある判断のすべてを、AI開発のプロと二人三脚で、一つずつ言葉にしていきました。</p>
+    <p class="lead" style="margin-top:22px">「藤井さんなら、この場面でどう考えますか」。何百という問いを投げられ、私はその一つひとつに答えていく。出てきた答えをAIに学習させ、実際のチャートで試し、外れれば原因を突き止めて、また作り直す。この試行錯誤を、数え切れないほど繰り返しました。</p>
+    <p class="lead" style="margin-top:22px">半年以上をかけて、ようやく「これは、私自身の頭の中とほとんど同じだ」と言えるものになった。それが、目的別に仕立てた<span class="cy">6人の相棒</span>です。片手間で作った便利ツールではありません。私がトレードに費やしてきた歳月のすべてを、そっくりそのまま注ぎ込んだ結晶です。</p>
+  </div>
+</section>
+
+<!-- ===== 6 AI ===== -->
+<section class="sec ai" id="ai">
+  <div class="wrap reveal">
+    <div class="ai__head">
+      <span class="lbl c" style="justify-content:center">THE SIX</span>
+      <h2 class="h2 mincho">あなたが悩んだとき、不安なとき、<br>トレードに迷うとき。<br>24時間いつでも、個別指導がある安心感。</h2>
+      <p class="lead" style="margin:24px auto 0;color:var(--ink-soft)">藤井百七郎の頭脳をデータベース化し、トレーダー藤井を完全コピー。あなたに個別で最適なアドバイスをします。これで<span class="mg">資産1億円、FIRE生活</span>を目指そう。</p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <div class="card__no">01</div><div class="card__en">Mohichi Finance</div>
+        <div class="card__name">あなた専属の<br>資産コンシェルジュ</div>
+        <p class="card__desc">FIREまでの地図を一緒に描く。資産とあなたの性格を診断し、資金管理を具体的な金額で設計する相談役。だから、資金管理で迷わない。</p>
+      </div>
+      <div class="card">
+        <div class="card__no">02</div><div class="card__en">Mohichi Coach</div>
+        <div class="card__name">一番弱い瞬間に隣にいる、<br>心の指導者</div>
+        <p class="card__desc">損切りの恐怖、塩漬けの迷い。崩れやすい瞬間に寄り添い、正しい行動へ引き戻すメンタルコーチ。</p>
+      </div>
+      <div class="card">
+        <div class="card__no">03</div><div class="card__en">Mohichi Analyst</div>
+        <div class="card__name">藤井流の目で銘柄を<br>読み解く、分析パートナー</div>
+        <p class="card__desc">気になる銘柄を私の視点で分析。エントリーの根拠、狙う目安、損切りラインまで提示する相棒。</p>
+      </div>
+      <div class="card">
+        <div class="card__no">04</div><div class="card__en">Mohichi Study</div>
+        <div class="card__name">難しいニュースを<br>"使える知識"に変える先生</div>
+        <p class="card__desc">用語やニュースを「あなたの利益にどう繋がるか」まで翻訳。通勤時間が、そのまま投資の学校になる。</p>
+      </div>
+      <div class="card">
+        <div class="card__no">05</div><div class="card__en">Mohichi Trader</div>
+        <div class="card__name">あなたのトレードを<br>直接添削する実践指導役</div>
+        <p class="card__desc">チャート画像を見せれば、私が"今のあなたの一手"を添削。知っているを、できるに変える。</p>
+      </div>
+      <div class="card">
+        <div class="card__no">06</div><div class="card__en">IR Report</div>
+        <div class="card__name">決算の"本当の数字"を<br>整理する参謀</div>
+        <p class="card__desc">決算を整理し、投資家目線でどう評価すべきかをまとめる。決算シーズンをチャンスに変えるリサーチ役。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONY ===== -->
+<section class="sec testi">
+  <div class="wrap reveal">
+    <div class="testi__row">
+      <div class="stat">1/20<small>これまで自分でやっていたチャート分析・ファンダ分析にかかる時間が</small></div>
+      <div>
+        <p>実際に使ってみたら、予想以上でした。今では私自身、手放せなくなっています。というより、このAIなしでトレードをすることなど、もう考えられません。</p>
+        <p>分析は10分の1、20分の1の時間で終わる。節約できた時間で、好きなことができる。それでいて、トレードで得る利益は変わらない。</p>
+        <div class="voice">「もう、このAIなしに<br><em>トレードなんてできない。</em>」</div>
+        <p style="font-size:14px;color:#9AA6C6">私自身、そして一部の教え子たちに使ってもらって、返ってきた声は全員共通でした。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== VOICES（教え子対談） ===== -->
+<section class="sec voices">
+  <div class="wrap reveal">
+    <div class="voices__head">
+      <span class="lbl">VOICES OF STUDENTS</span>
+      <h2 class="h2 mincho">教え子たちは、すでに<br>"その先"を生きている。</h2>
+    </div>
+    <div class="vgrid">
+      <div class="vcard">
+        <img src="assets/oshiego1.jpg" alt="藤井×教え子対談 沖縄移住のFIRE生活 橋本さん" loading="lazy">
+        <div class="vcard__body">
+          <span class="vcard__tag">沖縄移住のFIRE生活</span>
+          <div class="vcard__quote">FIREを実現し、<br>いまは沖縄で暮らしています。</div>
+          <div class="vcard__name">教え子・橋本さん（藤井×教え子対談より）</div>
+        </div>
+      </div>
+      <div class="vcard">
+        <img src="assets/oshiego2.jpg" alt="藤井×教え子対談 スキマ時間でサイドFIRE 矢野さん" loading="lazy">
+        <div class="vcard__body">
+          <span class="vcard__tag">スキマ時間でサイドFIRE</span>
+          <div class="vcard__quote">会社の給料に加えて、<br>トレードでの収入があるので安心。</div>
+          <div class="vcard__name">教え子・矢野さん（藤井×教え子対談より）</div>
+        </div>
+      </div>
+      <div class="vcard">
+        <img src="assets/oshiego3.jpg" alt="藤井×教え子対談 定年後の生活に不安なし 山之内さん" loading="lazy">
+        <div class="vcard__body">
+          <span class="vcard__tag">定年後の生活に不安なし</span>
+          <div class="vcard__quote">以前はお金の不安があったけど、<br>いまは安心して老後を楽しめる。</div>
+          <div class="vcard__name">教え子・山之内さん（藤井×教え子対談より）</div>
+        </div>
+      </div>
+    </div>
+    <p class="voices__note">※対談動画での本人の発言をもとに構成しています。個人の感想であり、成果を保証するものではありません。</p>
+  </div>
+</section>
+
+<!-- ===== CONTRAST ===== -->
+<section class="sec contrast">
+  <div class="wrap reveal">
+    <span class="lbl" style="justify-content:center">A NEW WAY TO WIN</span>
+    <h2 class="h2 mincho">時代は、完全に変わった。</h2>
+    <div class="split">
+      <div class="col old">
+        <h3>これまでの稼ぎ方</h3>
+        <ul>
+          <li>何年もかけて手法を独学し、スキルを磨く</li>
+          <li>1銘柄の分析に、何時間もかける</li>
+          <li>一流の指導は、100万円払える人だけのもの</li>
+          <li>迷いも恐怖も、ひとりで抱える</li>
+        </ul>
+      </div>
+      <div class="mid en"><span class="mid-arw">&rarr;</span></div>
+      <div class="col new">
+        <h3>これからの稼ぎ方</h3>
+        <ul>
+          <li>私の頭脳を借りて、最短で判断する</li>
+          <li>分析は10分の1、20分の1の時間で終わる</li>
+          <li>個別指導が、24時間、何度でも、あなたに</li>
+          <li>一番弱い瞬間に、いつも相棒がいる</li>
+        </ul>
+      </div>
+    </div>
+    <div class="verdict mincho">古い稼ぎ方から、<br><span class="mg">AIと共に進む</span>新しい稼ぎ方へ。</div>
+  </div>
+</section>
+
+<!-- ===== COMMUNITY（集合写真） ===== -->
+<section class="sec comm">
+  <div class="wrap reveal">
+    <div class="comm__head">
+      <span class="lbl">COMMUNITY</span>
+      <h2 class="h2 mincho">多くの教え子が、<br>私とともに学んできた。</h2>
+    </div>
+    <figure class="proof">
+      <img src="assets/koe1.jpg" alt="セミナー・個別指導での藤井百七郎と教え子たちの記念写真" loading="lazy">
+      <figcaption>セミナー・個別指導での私と教え子たち</figcaption>
+    </figure>
+    <figure class="proof" style="margin-bottom:0">
+      <img src="assets/koe1_1.jpg" alt="藤井のもとで学んできた教え子たちの顔ぶれ" loading="lazy">
+      <figcaption>私のもとで学んできた教え子たち（一部）</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ===== OFFER ===== -->
+<section class="sec offer" id="offer">
+  <div class="wrap reveal">
+    <div class="offer__in">
+      <span class="offer__badge">3年FIRE投資塾 メンバー限定</span>
+      <h2 class="offer__h">仲間になった人には、<br>この6つのAIを<span style="color:var(--yellow)">無料</span>で。</h2>
+      <p class="offer__lead">かつて100万円で提供していた個別指導も、トレード添削も。24時間、何度でも使えるモヒチAIを、3年FIRE投資塾の仲間になってくれたあなたへ開放します。</p>
+      <div class="price">
+        <span class="was">個別指導 参加費 <s>1,000,000円</s></span>
+        <span class="now">塾生は <b>0円</b> で開放</span>
+      </div>
+      <div><a href="#" class="cta-btn">まずは無料で情報を手に入れる <span class="arw">&rarr;</span></a></div>
+      <p class="offer__note">まずは説明を受け取ることから。しつこい勧誘はありません。<br>3年でFIREを"目指す"ための、新しい学び方をご案内します。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap">
+    <div class="brand">藤井流・3年FIRE投資塾<span class="en">FUJII HYAKUSHICHIRO &times; MOHICHI AI</span></div>
+    <p class="disc">本サービスは投資教育を目的としたものです。将来の利益や成果を保証するものではありません。投資はご自身の判断と責任において行ってください。記載の「FIRE」は達成を保証するものではなく、目標を示すものです。</p>
+  </div>
+</footer>
+
+<!-- sticky mobile cta -->
+<div class="sticky" id="sticky">
+  <a href="#offer"><small>無料</small>6つのAIの情報を受け取る <span class="en">&rarr;</span></a>
+</div>
+
+<script>
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.14});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  const sticky=document.getElementById('sticky');
+  addEventListener('scroll',()=>{sticky.classList.toggle('show',scrollY>window.innerHeight*0.9)});
+</script>
+</body>
+</html>
