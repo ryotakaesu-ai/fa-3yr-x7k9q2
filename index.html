@@ -154,8 +154,6 @@
 
   /* offer */
   .offer{background:var(--navy);color:#fff;text-align:center;position:relative;overflow:hidden}
-  .offer::before{content:"";position:absolute;top:-30%;right:-10%;width:60%;height:160%;
-    background:radial-gradient(circle,rgba(37,196,234,.18),transparent 60%)}
   .offer__in{position:relative;z-index:2;max-width:760px;margin:0 auto}
   .offer__badge{display:inline-block;background:var(--magenta);color:#fff;font-weight:800;font-size:13px;
     letter-spacing:.1em;padding:8px 22px;border-radius:100px;margin-bottom:28px}
@@ -231,8 +229,9 @@
     box-shadow:0 14px 36px rgba(11,26,59,.08);display:flex;flex-direction:column}
   .vcard img{width:100%}
   .vcard__body{padding:24px 22px 26px}
-  .vcard__tag{display:inline-block;background:var(--navy);color:var(--yellow);font-size:11.5px;
-    font-weight:800;letter-spacing:.08em;padding:5px 12px;border-radius:100px;margin-bottom:14px}
+  .vcard__tag{display:inline-flex;align-items:center;gap:10px;color:var(--magenta);font-size:12px;
+    font-weight:800;letter-spacing:.18em;margin-bottom:14px}
+  .vcard__tag::before{content:"";width:22px;height:2px;background:var(--magenta)}
   .vcard__quote{font-family:"Shippori Mincho",serif;font-weight:700;font-size:17.5px;line-height:1.75;margin-bottom:12px}
   .vcard__name{font-size:12.5px;color:var(--ink-soft)}
   .voices__note{margin-top:28px;font-size:11.5px;color:var(--ink-soft);text-align:center;line-height:1.9}
@@ -463,7 +462,7 @@
   <div class="wrap reveal">
     <div class="offer__in">
       <span class="offer__badge">人数限定・無料ご招待</span>
-      <h2 class="offer__h">プロに、無料で相談。さらに、<br>あなた専用のAIツールを<span style="color:var(--yellow)">プレゼント</span>。</h2>
+      <h2 class="offer__h">プロに、無料で相談。さらに、<br>あなた専用のAIツールを<span style="color:var(--yellow);display:inline-block">プレゼント</span>。</h2>
       <p class="offer__lead">かつて参加費100万円だった、藤井百七郎の個別指導。その視点でのアドバイスが、いまは無料相談で受けられます。ご相談いただいた方には、あなたに最適なAIツールを1つ、無料でプレゼントします。</p>
       <div class="price">
         <span class="was">かつての個別指導 参加費 <s>1,000,000円</s></span>
