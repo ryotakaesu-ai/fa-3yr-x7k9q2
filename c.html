@@ -116,6 +116,8 @@
     font-weight:600;margin-top:-18px}
   .card__name{font-family:"Shippori Mincho",serif;font-weight:800;font-size:19px;margin:12px 0 10px;line-height:1.45}
   .card__desc{font-size:14px;color:var(--ink-soft);line-height:1.95}
+  .ai-hero{margin-bottom:52px}
+  .ai-hero img{width:100%;border-radius:14px;box-shadow:0 24px 60px rgba(11,26,59,.28)}
 
   /* testimony (navy) */
   .testi{background:linear-gradient(180deg,var(--navy) 0%,var(--navy-2) 100%);color:#fff}
@@ -171,6 +173,14 @@
   .cta-btn:hover{transform:translateY(-3px) scale(1.02)}
   .cta-btn .arw{font-family:"Fraunces",serif}
   .offer__note{margin-top:26px;font-size:13px;color:#98A4C4;line-height:1.95}
+  .offer-form{max-width:480px;margin:0 auto;text-align:left}
+  .offer-form .ff{margin-bottom:18px}
+  .offer-form label{display:block;color:#C6D0E6;font-size:13px;font-weight:700;letter-spacing:.06em;margin-bottom:8px}
+  .offer-form input{width:100%;padding:16px 18px;border-radius:10px;border:1px solid rgba(255,255,255,.25);
+    background:rgba(255,255,255,.07);color:#fff;font-size:16px;font-family:inherit;transition:.25s}
+  .offer-form input::placeholder{color:#7F8DB0}
+  .offer-form input:focus{outline:none;border-color:var(--yellow);background:rgba(255,255,255,.12)}
+  .offer-form .cta-btn{width:100%;justify-content:center;margin-top:12px;border:none;cursor:pointer;font-family:inherit}
   .offer__why{max-width:500px;margin:0 auto 32px;text-align:center}
   .offer__why-lead{font-family:"Shippori Mincho",serif;font-weight:800;color:#fff;
     font-size:clamp(16px,2.2vw,20px);line-height:1.6;margin-bottom:14px}
@@ -266,7 +276,7 @@
 
 <!-- ===== FV (image only) ===== -->
 <header class="fv">
-  <a href="#offer" aria-label="無料で受け取る">
+  <a href="#form" aria-label="無料で受け取る">
     <picture>
       <source media="(max-width:760px)" srcset="assets/fv_sp_c.png">
       <img src="assets/fv_pc_c.png" alt="人数限定のご招待。投資のプロが、あなたの資産を無料診断。診断を受けた方に、あなたにぴったりのAIツールを1つ無料プレゼント。100万円の個別指導と同じ内容を0円で開放。現役トレーダー／投資教育者 藤井百七郎">
@@ -280,7 +290,7 @@
     <div class="media__ttl">掲載・出演メディア</div>
     <img src="assets/media_logos.png" alt="東海テレビ／STOCK VOICE／株主手帳／PR TIMES／日本経済新聞／Rakuten Infoseek News／exciteニュース／BtoBプラットフォーム業界チャンネル" loading="lazy">
     <p class="media__catch"><b>0円</b>で、プロが株式トレードの個別指導を。</p>
-    <div><a href="#offer" class="cta-flash"><span class="free">無料</span>まずは無料で情報を手に入れる <span class="arw">&rarr;</span></a></div>
+    <div><a href="#form" class="cta-flash"><span class="free">無料</span>まずは無料で情報を手に入れる <span class="arw">&rarr;</span></a></div>
   </div>
 </section>
 
@@ -322,6 +332,9 @@
       <h2 class="h2 mincho">あなたが悩んだとき、不安なとき、<br>トレードに迷うとき。<br>24時間いつでも、個別指導がある安心感。</h2>
       <p class="lead" style="margin:24px auto 0;color:var(--ink-soft)">藤井百七郎の頭脳をデータベース化し、トレーダー藤井を完全コピー。あなたに個別で最適なアドバイスをします。これで<span class="mg">資産1億円、FIRE生活</span>を目指そう。</p>
     </div>
+    <figure class="ai-hero reveal">
+      <img src="assets/6ai_lineup.jpg" alt="藤井の頭脳を宿した6つのAIツールが立ち並ぶイメージ" loading="lazy">
+    </figure>
     <div class="grid">
       <div class="card">
         <div class="card__no">01</div><div class="card__en">Mohichi Finance</div>
@@ -473,7 +486,13 @@
         <p class="offer__why-body">あなたの資産状況やお悩みをじっくりお聞きした上で、いちばん相性のいいAIツールを一緒にお選びします。そのため、下記のフォームからお電話番号のご登録をお願いいたします（無料相談以外でお電話することは一切ありませんので、ご安心ください）。</p>
         <p class="offer__why-note">無理な勧誘は一切ありません。</p>
       </div>
-      <div><a href="#" class="cta-btn">まずは無料で情報を手に入れる <span class="arw">&rarr;</span></a></div>
+      <!-- 送信先エンドポイントは接続待ち。actionを差し替えるまでは仮動作 -->
+      <form class="offer-form" id="form" action="#" method="post" onsubmit="alert('送信機能は準備中です');return false;">
+        <div class="ff"><label for="f-name">お名前</label><input type="text" id="f-name" name="name" placeholder="山田 太郎" required autocomplete="name"></div>
+        <div class="ff"><label for="f-email">メールアドレス</label><input type="email" id="f-email" name="email" placeholder="example@mail.com" required autocomplete="email"></div>
+        <div class="ff"><label for="f-tel">電話番号</label><input type="tel" id="f-tel" name="tel" placeholder="090-1234-5678" required autocomplete="tel"></div>
+        <button type="submit" class="cta-btn">まずは無料で情報を手に入れる <span class="arw">&rarr;</span></button>
+      </form>
       <p class="offer__note">まずは説明を受け取ることから。しつこい勧誘はありません。<br>3年でFIREを"目指す"ための、新しい学び方をご案内します。</p>
     </div>
   </div>
@@ -489,7 +508,7 @@
 
 <!-- sticky mobile cta -->
 <div class="sticky" id="sticky">
-  <a href="#offer"><small>無料</small>6つのAIの情報を受け取る <span class="en">&rarr;</span></a>
+  <a href="#form"><small>無料</small>6つのAIの情報を受け取る <span class="en">&rarr;</span></a>
 </div>
 
 <script>
