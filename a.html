@@ -181,6 +181,23 @@
   .offer-form input::placeholder{color:#7F8DB0}
   .offer-form input:focus{outline:none;border-color:var(--yellow);background:rgba(255,255,255,.12)}
   .offer-form .cta-btn{width:100%;justify-content:center;margin-top:12px;border:none;cursor:pointer;font-family:inherit}
+  .offer__sub{color:var(--yellow);font-weight:800;font-size:clamp(16px,2.2vw,21px);margin-bottom:28px}
+  .offer__op{max-width:420px;margin:0 auto 34px}
+  .offer__op img{width:100%;border-radius:12px;box-shadow:0 18px 44px rgba(0,0,0,.4)}
+  .offer__big{font-family:"Shippori Mincho",serif;font-weight:800;color:#fff;
+    font-size:clamp(18px,2.8vw,27px);line-height:1.75;margin-bottom:34px}
+  /* profile */
+  .profile{background:var(--paper)}
+  .prof__row{display:grid;grid-template-columns:280px 1fr;gap:44px;align-items:start;text-align:left}
+  .prof__photo img{width:100%;border-radius:10px;filter:drop-shadow(0 18px 40px rgba(11,26,59,.18))}
+  .prof__name{font-size:clamp(22px,3vw,30px);font-weight:800;margin-bottom:18px;line-height:1.4}
+  .prof__name small{display:block;font-family:"Noto Sans JP";font-size:12.5px;font-weight:600;
+    color:var(--ink-soft);letter-spacing:.08em;margin-top:8px}
+  .prof__body p{font-size:14.5px;color:#2B3757;line-height:2.05;margin-bottom:1.2em;max-width:none}
+  .prof__media{max-width:760px;margin:48px auto 0}
+  .prof__media img{width:100%;border-radius:10px;box-shadow:0 14px 36px rgba(11,26,59,.12)}
+  .prof__media figcaption{font-size:12.5px;color:var(--ink-soft);margin-top:12px;text-align:center}
+  @media(max-width:720px){.prof__row{grid-template-columns:1fr}.prof__photo{max-width:240px;margin:0 auto}}
   .offer__why{max-width:500px;margin:0 auto 32px;text-align:center}
   .offer__why-lead{font-family:"Shippori Mincho",serif;font-weight:800;color:#fff;
     font-size:clamp(16px,2.2vw,20px);line-height:1.6;margin-bottom:14px}
@@ -482,12 +499,17 @@
   <div class="wrap reveal">
     <div class="offer__in">
       <span class="offer__badge">人数限定・無料ご招待</span>
-      <h2 class="offer__h">プロに、無料で相談。さらに、<br>あなた専用のAIツールを<span style="color:var(--yellow);display:inline-block">プレゼント</span>。</h2>
+      <h2 class="offer__h">私たちとまずは、<br>無料で相談しませんか？</h2>
+      <p class="offer__sub">無料の相談会に参加した方に、AIツールをプレゼントします！</p>
+      <figure class="offer__op reveal">
+        <img src="assets/operator.jpg" alt="笑顔で無料相談を受け付けるオペレーター" loading="lazy">
+      </figure>
       <p class="offer__lead">かつて参加費100万円だった、藤井百七郎の個別指導。その視点でのアドバイスが、いまは無料相談で受けられます。ご相談いただいた方には、あなたに最適なAIツールを1つ、無料でプレゼントします。</p>
       <div class="price">
         <span class="was">かつての個別指導 参加費 <s>1,000,000円</s></span>
         <span class="now">いまなら <b>0円</b>（無料相談）</span>
       </div>
+      <p class="offer__big">まずは下記のフォームよりお気軽にどうぞ。<br>あなたにぴったりのツールがどれか、提案させていただきます。</p>
       <div class="offer__why">
         <p class="offer__why-lead">無料相談は、お電話で承ります。</p>
         <p class="offer__why-body">あなたの資産状況やお悩みをじっくりお聞きした上で、いちばん相性のいいAIツールを一緒にお選びします。そのため、下記のフォームからお電話番号のご登録をお願いいたします（無料相談以外でお電話することは一切ありませんので、ご安心ください）。</p>
@@ -500,8 +522,30 @@
         <div class="ff"><label for="f-tel">電話番号</label><input type="tel" id="f-tel" name="tel" placeholder="090-1234-5678" required autocomplete="tel"></div>
         <button type="submit" class="cta-btn">まずは無料で情報を手に入れる <span class="arw">&rarr;</span></button>
       </form>
-      <p class="offer__note">まずは説明を受け取ることから。しつこい勧誘はありません。<br>3年でFIREを"目指す"ための、新しい学び方をご案内します。</p>
+      <p class="offer__note">無料でツールをプレゼントするため、人数を限定しております。<br>先着順での受付となりますのでご了承ください。</p>
     </div>
+  </div>
+</section>
+
+<!-- ===== PROFILE ===== -->
+<section class="sec profile">
+  <div class="wrap reveal">
+    <span class="lbl">PROFILE</span>
+    <div class="prof__row">
+      <figure class="prof__photo">
+        <img src="assets/fujii_portrait.jpg" alt="藤井百七郎" loading="lazy">
+      </figure>
+      <div class="prof__body">
+        <h3 class="prof__name mincho">藤井 百七郎<small>ふじい もひちろう｜現役トレーダー／投資教育者</small></h3>
+        <p>投資歴20年。株式トレードをメインに資金を増やし続け、ドバイ、シンガポール、カンボジアなど海外にも資産を持ち、現在は「超富裕層」レベルの資産を築く。不労所得だけで暮らしていけるFIREも実現。</p>
+        <p>投資の学校を立ち上げ、東京校、名古屋校、金沢校、福岡校、神戸校、大阪校と日本全国に展開。これまで3,500人を指導し、そこから億り人、FIRE達成者を次々と生み出す。セミナーは毎回超満員で、キャンセル待ちが出るほどの人気。</p>
+        <p>テレビ取材、書籍の出版、専門雑誌への連載、株式専門チャンネルへの出演などメディア実績も多数。自身の集大成として、藤井流「3年FIRE」投資塾を主宰。</p>
+      </div>
+    </div>
+    <figure class="prof__media">
+      <img src="assets/fujii_media.jpg" alt="藤井百七郎の著書・雑誌掲載・株式専門チャンネル出演" loading="lazy">
+      <figcaption>著書・雑誌掲載・株式専門チャンネル出演など、メディア実績多数</figcaption>
+    </figure>
   </div>
 </section>
 
