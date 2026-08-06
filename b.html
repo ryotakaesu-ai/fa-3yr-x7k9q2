@@ -157,8 +157,17 @@
   /* offer */
   .offer{background:var(--navy);color:#fff;text-align:center;position:relative;overflow:hidden}
   .offer__in{position:relative;z-index:2;max-width:760px;margin:0 auto}
-  .offer__badge{display:inline-block;background:var(--magenta);color:#fff;font-weight:800;font-size:13px;
-    letter-spacing:.1em;padding:8px 22px;border-radius:100px;margin-bottom:28px}
+  .offer__band{position:relative;margin:0 calc(50% - 50vw) 48px;padding:20px 24px;
+    background:linear-gradient(95deg,#C8156A,#EC1E79 45%,#FF6A00 135%);
+    transform:skewY(-1.2deg);box-shadow:0 16px 44px rgba(236,30,121,.35)}
+  .offer__band::before,.offer__band::after{content:"";position:absolute;left:0;right:0;height:2px;
+    background:linear-gradient(90deg,transparent,var(--yellow),transparent)}
+  .offer__band::before{top:6px}.offer__band::after{bottom:6px}
+  .offer__band>span{display:block;transform:skewY(1.2deg);text-align:center}
+  .offer__band .en-lbl{display:block;font-family:"Fraunces",serif;font-weight:600;font-size:11px;
+    letter-spacing:.34em;color:var(--yellow);margin-bottom:6px}
+  .offer__band .jp{font-family:"Shippori Mincho",serif;font-weight:800;color:#fff;
+    font-size:clamp(21px,3.6vw,36px);letter-spacing:.14em}
   .offer__h{font-family:"Shippori Mincho",serif;font-weight:800;font-size:clamp(27px,5vw,46px);
     line-height:1.5;margin-bottom:26px}
   .offer__lead{color:#C6D0E6;font-size:clamp(15px,1.7vw,17px);line-height:2.1;max-width:38em;margin:0 auto 40px}
@@ -496,7 +505,7 @@
 <section class="sec offer" id="offer">
   <div class="wrap reveal">
     <div class="offer__in">
-      <span class="offer__badge">人数限定・無料ご招待</span>
+      <div class="offer__band"><span><small class="en-lbl">LIMITED INVITATION</small><span class="jp">人数限定・無料ご招待</span></span></div>
       <h2 class="offer__h">私たちとまずは、<br>無料で相談しませんか？</h2>
       <p class="offer__sub">無料の相談会に参加した方に、AIツールをプレゼントします！</p>
       <figure class="offer__op reveal">
